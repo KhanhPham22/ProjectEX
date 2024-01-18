@@ -1,0 +1,67 @@
+/* AdminLogin.css */
+
+/* Style for the container div */
+div {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the heading */
+h2 {
+  color: #333;
+}
+
+/* Style for the login form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for form inputs */
+input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Style for the submit button */
+button {
+  margin-top: 10px; /* Add margin to separate buttons */
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
+  display: block; /* Display each button on a new line */
+}
+
+/* Hover effect for the submit button */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styles for feature buttons */
+.feature-button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #28a745; /* Green color */
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block; /* Display each button on a new line */
+}
+
+.feature-button:hover {
+  background-color: #218838; /* Darker green color on hover */
+}
+
+/* Add styles for other feature buttons as needed */

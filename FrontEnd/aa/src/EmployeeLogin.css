@@ -1,0 +1,45 @@
+/* EmployeeLogin.css */
+
+/* Style for the container div */
+.employee-login-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the heading */
+.employee-login-heading {
+  color: #333;
+}
+
+/* Style for the login form */
+.employee-login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for form inputs */
+.employee-login-input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Style for the submit button */
+.employee-login-button {
+  padding: 10px;
+  background-color: #28a745; /* Green color for employee login */
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Hover effect for the submit button */
+.employee-login-button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
