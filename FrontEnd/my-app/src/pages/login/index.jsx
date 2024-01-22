@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaUser, FaLock } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+// import UsernameInput from '../../components/Login/Username';
 import backgroundImage from '../../assets/img/bg.jpg';
 import { Link } from 'react-router-dom'; // Import thư viện React Router
 
@@ -9,8 +9,8 @@ const Login = () => {
   return (
     <div className='container'
       style={{
-               width: '550px',
-              height: '550px',
+              //  width: '550px',
+              // height: '550px',
               flexshrink: '0',
               backgroundImage: `url(${backgroundImage})`, // Sử dụng biến đã import
               backgroundSize: 'cover',
@@ -39,6 +39,8 @@ const Login = () => {
         }}
         >Hệ thống chấm công</h1>
 
+        
+
         <div className="input-box mb-3 position-relative">
           <input
             type="text"
@@ -56,6 +58,8 @@ const Login = () => {
               background: '#FFF',
           }}
           />
+          {/* Sử dụng component UsernameInput ở đây */}
+        {/* <UsernameInput /> */}
           <FaUser className='icon' 
           style={{
             position: 'absolute',
@@ -95,30 +99,7 @@ const Login = () => {
           />
         </div>
 
-        {/* <div className="mb-3 form-check">
-          <input type="checkbox" className="form-check-input" id="rememberMe"
-            style ={{
-              display: 'inline-flex',
-              justifycontent: 'center',
-              alignitems: 'center',
-              gap: '10px',
-              borderradius:' 10px',
-              background: 'rgba(151, 71, 255, 0.00)',
-            }}
-          />
-          <label className="form-check-label" htmlFor="rememberMe">Remember me
-          style ={{
-              display: 'inline-flex',
-              justifycontent: 'center',
-              alignitems: 'center',
-              gap: '10px',
-              borderradius:' 10px',
-              background: 'rgba(151, 71, 255, 0.00)',
-            }}
-          </label>
-        </div> */}
 
-        
          <div className="mb-3">
           <Link to="/forgot-password">Quên mật khẩu</Link>
         </div> 

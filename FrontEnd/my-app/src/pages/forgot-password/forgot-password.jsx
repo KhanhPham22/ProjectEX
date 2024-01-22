@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { resetPasswordAPI } from '../../components/API/API';
+// import { resetPasswordAPI } from '../../components/API/API';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import backgroundImage from '../../assets/img/bg.jpg';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -18,7 +20,7 @@ const ForgotPassword = () => {
       }
 
       // Gọi hàm từ file API để đặt lại mật khẩu
-      const data = await resetPasswordAPI(email, password);
+      // const data = await resetPasswordAPI(email, password);
 
       // Nếu thành công, đánh dấu là đã gửi thành công
       setIsSubmitted(true);
@@ -29,45 +31,96 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div>
-      <h2>Đặt lại mật khẩu</h2>
+    <div className="container"
+    style={{
+    //   width: '550px',
+    //  height: '550px',
+     flexshrink: '0',
+     backgroundImage: `url(${backgroundImage})`, // Sử dụng biến đã import
+     backgroundSize: 'cover',
+     backgroundPosition: 'center',
+     width: '100vw', // Bọc toàn bộ chiều rộng của trình duyệt
+    height: '100vh', // Bọc toàn bộ chiều cao của trình duyệt
+     display: 'flex',
+   justifyContent: 'center',
+   alignItems: 'center',
+   
+   }}>
+    
+    <h2 style={{ color: 'blue', fontSize: '30px',margin:'15px' }}>Đặt lại mật khẩu</h2>
       {isSubmitted ? (
         <p>An email has been sent with instructions to reset your password.</p>
       ) : (
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Email:</label>
-            <input
-              type="email"
+        <label style={{ marginBottom: '8px', display: 'block' }}>Email:</label>
+        <input
+             type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
+            required
+          style={{
+                  padding: '8px',
+                  fontSize: '14px',
+                  width: '100%',
+                  boxSizing: 'border-box',
+                 
+    }}
+  />
+</div>
 
-          <div>
-            <label>New Password:</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
+  <div>
+      <label style={{ marginBottom: '8px', display: 'block' }}>New Password:</label>
+      <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          style={{
+                 padding: '8px',
+                fontSize: '14px',
+                width: '100%',
+                boxSizing: 'border-box',
+    }}
+  />
+</div>
 
-          <div>
-            <label>Confirm Password:</label>
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </div>
 
-          <div>
-            <button type="submit">Reset Password</button>
-          </div>
+    <div>
+        <label style={{ marginBottom: '8px', display: 'block' }}>Confirm Password:</label>
+        <input
+            type="password"
+           value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          required
+        style={{
+            padding: '8px',
+           fontSize: '14px',
+           width: '100%',
+           boxSizing: 'border-box',
+    }}
+  />
+</div>
+
+
+<div>
+  <button
+    type="submit"
+    style={{
+      backgroundColor: '#4CAF50', /* Màu nền */
+      color: 'white', /* Màu chữ */
+      padding: '10px 15px', /* Kích thước đệm */
+      fontSize: '14px', /* Kích thước chữ */
+      border: 'none', /* Không có đường viền */
+      borderRadius: '5px', /* Góc bo tròn */
+      cursor: 'pointer', /* Con trỏ khi di chuột vào nút */
+      marginTop:'20px',
+    }}
+  >
+    Reset Password
+  </button>
+</div>
+
         </form>
       )}
     </div>
