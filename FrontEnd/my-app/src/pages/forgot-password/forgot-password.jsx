@@ -47,20 +47,20 @@ const ForgotPassword = () => {
    
    }}>
     
-    <h2 style={{ color: 'blue', fontSize: '30px',margin:'15px' }}>Đặt lại mật khẩu</h2>
+    <h2 style={{ color: 'blue', fontSize: '35px', marginBottom: ' 335px  ', padding:' 50px ', textAlign: 'center' }}>Đặt lại mật khẩu</h2>
       {isSubmitted ? (
         <p>An email has been sent with instructions to reset your password.</p>
       ) : (
         <form onSubmit={handleSubmit}>
           <div>
-        <label style={{ marginBottom: '8px', display: 'block' }}>Email:</label>
+        <label style={{ marginBottom: '10px', display: 'block' }}>Email:</label>
         <input
              type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             required
           style={{
-                  padding: '8px',
+                  padding: '10px',
                   fontSize: '14px',
                   width: '100%',
                   boxSizing: 'border-box',
@@ -70,14 +70,14 @@ const ForgotPassword = () => {
 </div>
 
   <div>
-      <label style={{ marginBottom: '8px', display: 'block' }}>New Password:</label>
+      <label style={{ marginBottom: '10px', display: 'block' }}>New Password:</label>
       <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           style={{
-                 padding: '8px',
+                 padding: '10px',
                 fontSize: '14px',
                 width: '100%',
                 boxSizing: 'border-box',
@@ -87,14 +87,14 @@ const ForgotPassword = () => {
 
 
     <div>
-        <label style={{ marginBottom: '8px', display: 'block' }}>Confirm Password:</label>
+        <label style={{ marginBottom: '10px', display: 'block' }}>Confirm Password:</label>
         <input
             type="password"
            value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         style={{
-            padding: '8px',
+            padding: '10px',
            fontSize: '14px',
            width: '100%',
            boxSizing: 'border-box',

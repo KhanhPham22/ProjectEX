@@ -1,6 +1,7 @@
 import Login from "./pages/login";
 import "./App.css";
 import React from "react";
+import Home from "./layout/home";
 import ForgotPassword from './pages/forgot-password/forgot-password';
 import Admin from "./pages/admin/admin";
 import Employee from "./pages/employee/employee";
@@ -25,11 +26,17 @@ function App() {
          <Route path="/employee" element ={<Employee/>} />
           {/* <Route path="/" element={<Home />} /> */}
 
+          {/* Route cho trang home */}
+          <Route path="/" element={<Home />} />
+
+
           <Route path="/404" element ={<Notfound/>} />
 
           <Route path="/appli" element={<Application/>} />
+
           {/* Hoặc bạn có thể đặt một trang 404 ở đây nếu không khớp với bất kỳ route nào */}
-          {/* <Route path="*" element={<NotFound />} /> */}
+          {/* <Route path="*" element={<Navigate to="/404" />} /> */}
+          <Route path="*" element={<Notfound />} />
         </Routes>
       </Router>
     </div>
