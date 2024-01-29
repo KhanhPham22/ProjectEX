@@ -2,23 +2,21 @@ import React from "react";
 import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
-import UsernameInput from "../../components/Login/Username";
 import backgroundImage from "../../assets/img/bg.jpg";
-import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import "@fontsource/roboto/400.css";
-import MuiLink from "@mui/material/Link";
+import "@fontsource/roboto/500.css";
+import IconButton from "@mui/material/IconButton";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import Grid from "@mui/material/Grid";
+import { Link } from "react-router-dom";
 
-const Login = () => {
+function Otp() {
   return (
     <Container
       maxWidth="sm"
       sx={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundColor: "#404040",
         minHeight: "100vh",
         minWidth: "100vw",
         display: "flex",
@@ -27,38 +25,40 @@ const Login = () => {
         color: "#0b0b45",
         fontSize: "30px",
         textAlign: "center",
-        borderStyle: "solid",
-        borderColor: "#808080",
-        borderWidth: "2px",
       }}
     >
       <form
         style={{
           backgroundColor: "#404040",
           height: "650px",
-          Width: "750px",
-
-          margin: "20px",
+          width: "650px",
           padding: "50px",
           borderRadius: "30px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          margin: "auto",
         }}
       >
-        <Box
-          sx={{
-            // width: "100%",
-            // height: "26px",
-            color: "white",
-            fontSize: "5px",
-          }}
-        >
-          <Typography variant="h1" gutterBottom>
-            Đăng nhập
-          </Typography>
-        </Box>
-        <UsernameInput />
+        <Grid container spacing={2} alignItems="center">
+          <Grid item>
+            <Link to="/login">
+              {" "}
+              {/* Đặt đường dẫn tương ứng với trang bạn muốn quay lại */}
+              <IconButton sx={{ fontSize: 40, color: "white" }}>
+                <ArrowBackIcon />
+              </IconButton>
+            </Link>
+          </Grid>
+          <Grid item>
+            <Box sx={{ width: "100%", color: "white", fontSize: "20px" }}>
+              <Typography variant="h2" gutterBottom>
+                Nhập mã otp
+              </Typography>
+              <Typography variant="h3" gutterBottom>
+                Nhập vào 6 chữ số được gửi tới email của bạn
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+
         <Box
           component="form"
           sx={{
@@ -72,22 +72,11 @@ const Login = () => {
         >
           <TextField
             id="outlined-basic"
-            label="Nhập mật khẩu"
+            label="Nhập tài khoản"
             variant="outlined"
             style={{ width: "100%" }}
           />
         </Box>
-
-        <MuiLink
-          component={Link}
-          to="/forgot-password"
-          sx={{
-            fontSize: "20px",
-            marginLeft: "300px",
-          }}
-        >
-          Quên mật khẩu
-        </MuiLink>
 
         <Button
           variant="contained"
@@ -95,14 +84,15 @@ const Login = () => {
             width: "100%",
             padding: "10px 15px",
             background: "#279142",
+            marginTop: "10px",
             margin: "20px",
           }}
         >
-          Đăng nhập
+          Xác nhận
         </Button>
       </form>
     </Container>
   );
-};
+}
 
-export default Login;
+export default Otp;

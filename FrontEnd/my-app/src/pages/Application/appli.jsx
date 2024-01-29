@@ -1,44 +1,97 @@
-import React, { useState } from 'react';
+import React from "react";
+import Container from "@mui/material/Container";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import backgroundImage from "../../assets/img/bg.jpg";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import "@fontsource/roboto/500.css";
+// import IconButton from "@mui/material/IconButton";
+// import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+// import Grid from "@mui/material/Grid";
+// import { Link } from "react-router-dom";
 
 function Application() {
-  const [name, setName] = useState('');
-  const [position, setPosition] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [reason, setReason] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Here you can add logic to submit the form
-    console.log(`Name: ${name}, Position: ${position}, Phone Number: ${phoneNumber}, Start Date: ${startDate}, End Date: ${endDate}, Reason: ${reason}`);
-  }
-
   return (
-    <div>
-      <h2>Application</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} required />
-        <br />
-        <label htmlFor="position">Position:</label>
-        <input type="text" id="position" value={position} onChange={(e) => setPosition(e.target.value)} required />
-        <br />
-        <label htmlFor="phoneNumber">Phone Number:</label>
-        <input type="tel" id="phoneNumber" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
-        <br />
-        <label htmlFor="startDate">Start Date:</label>
-        <input type="date" id="startDate" value={startDate} onChange={(e) => setStartDate(e.target.value)} required />
-        <br />
-        <label htmlFor="endDate">End Date:</label>
-        <input type="date" id="endDate" value={endDate} onChange={(e) => setEndDate(e.target.value)} required />
-        <br />
-        <label htmlFor="reason">Reason:</label>
-        <textarea id="reason" value={reason} onChange={(e) => setReason(e.target.value)} required></textarea>
-        <br />
-        <button type="submit">Submit</button>
+    <Container
+      maxWidth="sm"
+      sx={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        // backgroundColor: "#404040",
+        minHeight: "100vh",
+        minWidth: "100vw",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "#0b0b45",
+        fontSize: "30px",
+        textAlign: "center",
+        borderStyle: "solid",
+        borderColor: "#808080",
+        borderWidth: "2px",
+      }}
+    >
+      <form
+        style={{
+          // backgroundColor: "#404040",
+          // height: "650px",
+          // Width: "750px",
+
+          margin: "20px",
+          padding: "50px",
+          borderRadius: "30px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            // height: "26px",
+            color: "white",
+            fontSize: "5px",
+          }}
+        >
+          <Typography variant="h1" gutterBottom>
+            Tạo đơn xin nghỉ phép
+          </Typography>
+        </Box>
+
+        <Box
+          component="form"
+          sx={{
+            display: "flex",
+            background: "#888888",
+            width: "100%",
+            margin: "20px",
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            id="outlined-basic"
+            label="Nhập mật khẩu"
+            variant="outlined"
+            style={{ width: "100%" }}
+          />
+        </Box>
+
+        <Button
+          variant="contained"
+          style={{
+            width: "100%",
+            padding: "10px 15px",
+            background: "#279142",
+            margin: "20px",
+          }}
+        >
+          Đăng nhập
+        </Button>
       </form>
-    </div>
+    </Container>
   );
 }
 

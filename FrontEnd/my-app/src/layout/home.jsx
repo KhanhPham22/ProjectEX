@@ -1,92 +1,106 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import backgroundImage from '../assets/img/bg.jpg';
+import React from "react";
+import { Link } from "react-router-dom";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import backgroundImage from "../assets/img/bg.jpg";
+import logo from "../assets/img/Logo.png";
 
 function Home() {
   return (
-    <div className='container'
-      style={{
+    <Container
+      maxWidth="sm"
+      sx={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-
-      <form className='wrapper'
-        style={{
-          
-          fontSize: '40px',
-          textAlign: 'center',
-          width: '450px',
-          height: '550px',
-          flexshrink: 0,
-          borderradius: '30px',
-          background: '#404040'
-        }}>
-
-        <h1 className='text-center mb-4'
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundColor: "#404040",
+        minHeight: "100vh",
+        minWidth: "100vw",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+      }}
+    >
+      {/* Form */}
+      <Box
+        component="form"
+        className="wrapper"
+        sx={{
+          fontSize: "40px",
+          textAlign: "center",
+          width: "450px",
+          height: "550px",
+          flexShrink: 0,
+          borderRadius: "30px",
+          background: "#404040",
+          padding: "60px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          position: "relative",
+        }}
+      >
+        {/* Logo */}
+        <img
+          src={logo}
+          alt="Logo"
           style={{
-            fontSize:'25px',
-            display: 'inline-flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '10px',
-          }}>
+            width: "300px",
+            height: "50px",
+            position: "absolute",
+            top: "10px", // Adjust as needed
+          }}
+        />
+
+        {/* Heading */}
+        <Typography
+          variant="h1"
+          sx={{ fontSize: "25px", marginTop: "20px", mb: 4 }}
+        >
           Bạn muốn đăng nhập với tư cách là ?
-        </h1>
+        </Typography>
 
-        <button type="submit" className="btn btn-primary btn-lg"
-          style={{
-            display: 'flex',
-            width: '320px',
-            height: '50px',
-            padding: '10px 15px',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '10px',
-            flexShrink: '0',
-            margin:'auto',
-            
-            marginBottom:'40px',
-            borderRadius: '15px',
-            background: '#279142',
-            textAlign: 'center',
-            boxShadow: '0px 0px 20px 0px rgba(250, 250, 250, 0.25)',
-          }}>
-          <Link to="/login" style={{ textDecoration: 'none', color: '#ffffff' }}>
-            Nhân viên
-          </Link>
-        </button>
+        {/* Button - Nhân viên */}
+        <Button
+          type="submit"
+          variant="contained"
+          size="large"
+          sx={{
+            width: "320px",
+            height: "50px",
+            mb: 4,
+            borderRadius: "15px",
+            backgroundColor: "#27AE60",
+            marginTop: "150px",
+          }}
+          component={Link}
+          to="/login"
+        >
+          Nhân viên
+        </Button>
 
-        <button type="submit" className="btn btn-primary btn-lg"
-          style={{
-            display: 'flex',
-            width: '320px',
-            height: '50px',
-            padding: '10px 15px',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '10px',
-            flexShrink: '0',
-            margin:'auto',
-            marginTop:'20px',
-            borderRadius: '15px',
-            background: '#737373',
-            textAlign: 'center',
-            boxShadow: '0px 0px 20px 0px rgba(250, 250, 250, 0.25)',
-          }}>
-          <Link to="/login" style={{ textDecoration: 'none', color: '#ffffff' }}>
-            Quản trị viên
-          </Link>
-        </button>
-
-      </form>
-    </div>
+        {/* Button - Quản trị viên */}
+        <Button
+          type="submit"
+          variant="contained"
+          size="large"
+          sx={{
+            width: "320px",
+            height: "50px",
+            borderRadius: "15px",
+            backgroundColor: "#27AE60",
+            marginTop: "0",
+          }}
+          component={Link}
+          to="/login"
+        >
+          Quản trị viên
+        </Button>
+      </Box>
+    </Container>
   );
 }
 
