@@ -1,37 +1,83 @@
-import React from 'react';
+import React from "react";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import Avatar from "@mui/material/Avatar";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import RestoreIcon from "@mui/icons-material/Restore";
+import "@fontsource/roboto/400.css";
+import Typography from "@mui/material/Typography";
+import HouseIcon from "@mui/icons-material/House";
+import MailIcon from "@mui/icons-material/Mail";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
-function Employee() {
-  const employee = {
-    name: 'Trần Nhân Hiếu',
-    position: 'IT Staff',
-    workingHours: '09:00 AM - 06:00 PM',
-    homepage: ['9', '8', '11', '7', '12', '6'],
-    leaveRequest: '50 days, 09:01 AM, 28/07/2024',
-    attendance: {
-      present: 21,
-      absent: 3,
-    },
-  };
-
+const Employee = () => {
   return (
-    <div>
-      <h2>{employee.name}</h2>
-      <address>
-        <p>{employee.position}</p>
-        <p>{employee.workingHours}</p>
-        <p>Leave request: {employee.leaveRequest}</p>
-      </address>
-      <dl>
-        <dt>Attendance</dt>
-        <dd>
-          <p>Present: {employee.attendance.present}</p>
-          <p>Absent: {employee.attendance.absent}</p>
-        </dd>
-      </dl>
-      <h3>Homepage</h3>
-      <div dangerouslySetInnerHTML={{ __html: `<ul>${employee.homepage.map(link => `<li><a href="http://example.com/${link}">${link}</a></li>`).join('')}</ul>` }} />
-    </div>
+    <Container
+      maxWidth="sm"
+      sx={{
+        backgroundColor: "#282828",
+        minHeight: "100vh",
+        minWidth: "100vw",
+        borderStyle: "solid",
+        borderColor: "#808080",
+        borderWidth: "2px",
+        display: "flex",
+      }}
+    >
+      <Box>
+        <form>
+          <Typography
+            mt={6}
+            sx={{
+              fontSize: "22px",
+              fontWeight: 700,
+              color: "#EDEDF2",
+              textAlign: "center",
+            }}
+          >
+            Trang chủ
+          </Typography>
+          <Stack spacing={2} direction="column" alignItems={"center"}>
+            <Avatar alt="Hoàng Kim Chi" src="/path/to/avatar.jpg" />
+            <Typography variant="body1" fontWeight={700}>
+              Hoàng Kim Chi
+            </Typography>
+            <Typography variant="body1" fontWeight={700}>
+              BA
+            </Typography>
+            <Typography variant="body2" fontWeight={700}>
+              Thời gian làm việc: 09:00 AM - 06:00 PM
+            </Typography>
+            <AccessTimeIcon fontSize="large" />
+            <Typography variant="body1" fontWeight={700}>
+              09:01 AM
+            </Typography>
+            <Typography variant="body1" fontWeight={700}>
+              28/07/2024
+            </Typography>
+          </Stack>
+        </form>
+        <BottomNavigation
+          showLabels
+          // value={value}
+          onChange={(event, newValue) => {
+            // setValue(newValue);
+          }}
+        >
+          <BottomNavigationAction label="Trang chủ" icon={<HouseIcon />} />
+          <BottomNavigationAction label="Đơn nghỉ" icon={<MailIcon />} />
+          <BottomNavigationAction label="Lịch sử" icon={<RestoreIcon />} />
+          <BottomNavigationAction
+            label="Tài khoản"
+            icon={<AccountCircleIcon />}
+          />
+        </BottomNavigation>
+      </Box>
+    </Container>
   );
-}
+};
 
 export default Employee;

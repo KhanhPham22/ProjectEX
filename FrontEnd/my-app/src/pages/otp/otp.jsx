@@ -11,7 +11,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 
-function Otp() {
+const Otp = () => {
   return (
     <Container
       maxWidth="sm"
@@ -40,8 +40,6 @@ function Otp() {
         <Grid container spacing={2} alignItems="center">
           <Grid item>
             <Link to="/login">
-              {" "}
-              {/* Đặt đường dẫn tương ứng với trang bạn muốn quay lại */}
               <IconButton sx={{ fontSize: 40, color: "white" }}>
                 <ArrowBackIcon />
               </IconButton>
@@ -93,6 +91,6 @@ function Otp() {
       </form>
     </Container>
   );
-}
+};
 
 export default Otp;

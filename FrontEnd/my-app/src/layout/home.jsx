@@ -1,107 +1,115 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import backgroundImage from "../assets/img/bg.jpg";
-import logo from "../assets/img/Logo.png";
+import backgroundImage from "../assets/img/newbg.jpg";
+import Logo from "../assets/img/Logo.png";
+import Stack from "@mui/material/Stack";
+import FaceIcon from "@mui/icons-material/Face";
+import Face4Icon from "@mui/icons-material/Face4";
 
-function Home() {
+const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <Container
       maxWidth="sm"
       sx={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "10px",
         backgroundColor: "#404040",
         minHeight: "100vh",
         minWidth: "100vw",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        position: "relative",
       }}
     >
-      {/* Form */}
       <Box
-        component="form"
-        className="wrapper"
         sx={{
-          fontSize: "40px",
-          textAlign: "center",
           width: "450px",
-          height: "550px",
-          flexShrink: 0,
+          margin: "auto", // Combine the duplicate margin property
           borderRadius: "30px",
-          background: "#404040",
-          padding: "60px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          position: "relative",
+          padding: "0 20px",
         }}
       >
-        {/* Logo */}
-        <img
-          src={logo}
-          alt="Logo"
-          style={{
-            width: "300px",
-            height: "50px",
-            position: "absolute",
-            top: "10px", // Adjust as needed
-          }}
-        />
+        <Box pt={10} textAlign={"center"}>
+          <img
+            src={Logo}
+            alt="Logo"
+            style={{
+              width: "270px",
+              height: "43px", // Add height property
+              color: "#FFFFFF",
+              // marginTop: "91px",
+              // marginLeft: "45px",
+            }}
+          />
+        </Box>
+        <form>
+          <Stack
+            spacing={2}
+            direction="column"
+            alignItems={"center"}
+            justifyContent={"flex-end"}
+            sx={{
+              height: "calc(100vh - 170px)",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "18px",
+                fontWeight: 700,
+                color: "#C6C6C6",
+                textAlign: "center",
+              }}
+            >
+              Bạn muốn đăng nhập với tư cách là ?
+            </Typography>
 
-        {/* Heading */}
-        <Typography
-          variant="h1"
-          sx={{ fontSize: "25px", marginTop: "20px", mb: 4 }}
-        >
-          Bạn muốn đăng nhập với tư cách là ?
-        </Typography>
+            <Box
+              sx={{
+                textAlign: "center",
+              }}
+            >
+              <Button
+                sx={{
+                  width: "320px",
+                }}
+                variant="contained"
+                startIcon={<FaceIcon />}
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                Nhân viên
+              </Button>
+            </Box>
 
-        {/* Button - Nhân viên */}
-        <Button
-          type="submit"
-          variant="contained"
-          size="large"
-          sx={{
-            width: "320px",
-            height: "50px",
-            mb: 4,
-            borderRadius: "15px",
-            backgroundColor: "#27AE60",
-            marginTop: "150px",
-          }}
-          component={Link}
-          to="/login"
-        >
-          Nhân viên
-        </Button>
-
-        {/* Button - Quản trị viên */}
-        <Button
-          type="submit"
-          variant="contained"
-          size="large"
-          sx={{
-            width: "320px",
-            height: "50px",
-            borderRadius: "15px",
-            backgroundColor: "#27AE60",
-            marginTop: "0",
-          }}
-          component={Link}
-          to="/login"
-        >
-          Quản trị viên
-        </Button>
+            <Box
+              sx={{
+                textAlign: "center",
+              }}
+            >
+              <Button
+                sx={{
+                  width: "320px",
+                }}
+                variant="outlined"
+                startIcon={<Face4Icon />}
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                Quản trị viên
+              </Button>
+              {/* <Link to="/login"></Link> */}
+            </Box>
+          </Stack>
+        </form>
       </Box>
     </Container>
   );
-}
+};
 
 export default Home;

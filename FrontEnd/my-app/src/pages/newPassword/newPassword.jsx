@@ -9,11 +9,10 @@ import Typography from "@mui/material/Typography";
 import "@fontsource/roboto/500.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-// import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import Grid from "@mui/material/Grid";
 import InputAdornment from "@mui/material/InputAdornment";
 
-function NewPassword() {
+const NewPassword = () => {
   return (
     <Container
       maxWidth="sm"
@@ -70,7 +69,7 @@ function NewPassword() {
             label="Nhập mật khẩu mới"
             variant="outlined"
             type="password"
-            style={{ width: "100% " }}
+            style={{ width: "100%" }}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -98,7 +97,7 @@ function NewPassword() {
             label="Xác nhận mật khẩu mới"
             variant="outlined"
             type="password"
-            style={{ width: "100% " }}
+            style={{ width: "100%" }}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -114,7 +113,7 @@ function NewPassword() {
             variant="contained"
             style={{
               width: "100%",
-              padding: " 10px",
+              padding: "10px",
               background: "#279142",
               marginTop: "70px",
               margin: "auto",
@@ -126,6 +125,6 @@ function NewPassword() {
       </form>
     </Container>
   );
-}
+};
 
 export default NewPassword;
